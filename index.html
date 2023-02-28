@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content
+        ="width=device-width, initial-scale=1.0">
+    <title>Juego De Dados </title>
+  
+    <style>
+        .container {
+            width: 70%;
+            margin: auto;
+            text-align: center;
+        }
+  
+        .dado {
+            text-align: center;
+            display: inline-block;
+            margin: 10px;
+        }
+  
+        body {
+            background-color: red;
+            margin: 0;
+        }
+  
+        h1 {
+            margin: 30px;
+            font-family: "Lobster", cursive;
+            text-shadow: 5px 0 red;  
+            font-size: 4.5rem;
+            color: black;
+            text-align: center;
+        }
+  
+        p {
+            font-size: 2rem;
+            color: black;
+            text-shadow: 5px 0 red;
+            font-family: "Indie Flower", cursive;
+        }
+  
+        img {
+            width: 100%;
+        }
+  
+        .bottom {
+            padding-top: 30px;
+        }
+  
+        .butn {
+            background: blue;
+            font-family: "Indie Flower", cursive;
+            border-radius: 7px;
+            color: black;
+            font-size: 30px;
+            padding: 16px 25px 16px 25px;
+            text-decoration: none;
+        }
+  
+        .butn:hover {
+            background: orange;
+            text-decoration: none;
+        }
+    </style>
+</head>
+  
+<body>
+    <div class="container">
+        <h1>Juguemos</h1>
+  
+        <div class="dado">
+            <p class="Jugador1">Jugador 1</p>
+            <img class="img1" src="dado6.png">
+        </div>
+  
+        <div class="dado">
+            <p class="Jugador2">Jugador 2</p>
+            <img class="img2" src="dado6.png">
+        </div>
+    </div>
+    
+    <div class="container bottom">
+        <button type="button" class="butn"
+            onClick="jugardados()">   
+            Jugar
+        </button>
+    </div>
+    <div class="container bottom">
+        <button type="button" class="butn"
+            onClick="Editarnombre()">
+            Editar nombre
+        </button>
+    </div>
+    
+    <script>
+  
+        // Nombres de los jugadores
+        var Jugador1 = "Jugador 1";
+        var Jugador2 = "Jugador 2";
+  
+        // cambiar el nombre 
+        function Editarnombre() {
+            Jugador1 = prompt("Cambiar nombre Jugador 1");
+            Jugador2 = prompt("Cambiar nombre Jugador 2");
+  
+            document.querySelector("p.Jugador1")
+                            .innerHTML = Jugador1;
+                              
+            document.querySelector("p.Jugador2")
+                            .innerHTML = Jugador2;
+        }
+  
+        // funcion del juego 
+        function jugardados() {
+            setTimeout(function () {
+    
+                //Generar una función Random
+                var randomNumber1 = Math.floor(Math.random() * 6) + 1;
+                var randomNumber2 = Math.floor(Math.random() * 6) + 1;
+  
+                document.querySelector(".img1").setAttribute("src",
+                    "dado" + randomNumber1 + ".png");
+  
+                document.querySelector(".img2").setAttribute("src",
+                    "dado" + randomNumber2 + ".png");
+  
+                if (randomNumber1 === randomNumber2) {
+                    document.querySelector("h1").innerHTML = "Empate!";
+                }
+  
+                else if (randomNumber1 < randomNumber2) {
+                    document.querySelector("h1").innerHTML
+                        = (Jugador2 + " Gana!");
+                }
+  
+                else {
+                    document.querySelector("h1").innerHTML
+                        = (Jugador1 + " Gana!");
+                }
+            }, 2500);
+        }
+    </script>
+</body>
+  
+</html>

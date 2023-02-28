@@ -1,0 +1,57 @@
+<style>
+        .container {
+            width: 70%;
+            margin: auto;
+            text-align: center;
+        }
+  
+        .dado {
+            text-align: center;
+            display: inline-block;
+            margin: 10px;
+        }
+  
+        body {
+            background-color: orange;
+            margin: 0;
+        }
+  
+        h1 {
+            margin: 30px;
+            font-family: "Lobster", cursive;
+            text-shadow: 5px 0 red;  
+            font-size: 4.5rem;
+            color: black;
+            text-align: center;
+        }
+  
+        p {
+            font-size: 2rem;
+            color: black;
+            text-shadow: 5px 0 red;
+            font-family: "Indie Flower", cursive;
+        }
+  
+        img {
+            width: 100%;
+        }
+  
+        .bottom {
+            padding-top: 30px;
+        }
+  
+        .butn {
+            background: blue;
+            font-family: "Indie Flower", cursive;
+            border-radius: 7px;
+            color: black;
+            font-size: 30px;
+            padding: 16px 25px 16px 25px;
+            text-decoration: none;
+        }
+  
+        .butn:hover {
+            background: orange;
+            text-decoration: none;
+        }
+    </style>
